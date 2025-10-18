@@ -13,6 +13,7 @@
 <body>
 
 
+     <!-- z-index: 2; -->
 
     <nav class="navbar">
         <div class="logo">MyWebsite</div>
@@ -27,7 +28,10 @@
             </li>
 
             <li class="nav-item">
+                
                 <a href="#" class="nav-link" id="services-link">Services ▼ </a>
+
+        /* z-index: 3; /* Above navbar */
                 <div class="dropdown" id="services-dropdown">
                     <a href="#" class="dropdown-item">Web Design</a>
                     <a href="#" class="dropdown-item">Development</a>
@@ -44,6 +48,8 @@
         </ul>
     </nav>
 
+<!-- 
+     z-index: 1; /* Below navbar  -->
 
     <main class="content">
         <h1>Welcome to Our Website</h1>
