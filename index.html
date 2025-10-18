@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Navbar with Dropdown</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+
+
+
+    <nav class="navbar">
+        <div class="logo">MyWebsite</div>
+        <ul class="nav-menu">
+            
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link" id="services-link">Services ▼ </a>
+                <div class="dropdown" id="services-dropdown">
+                    <a href="#" class="dropdown-item">Web Design</a>
+                    <a href="#" class="dropdown-item">Development</a>
+                    <a href="#" class="dropdown-item">SEO</a>
+                    <a href="#" class="dropdown-item">Marketing</a>
+                    <a href="#" class="dropdown-item">Customer Services</a>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+
+        </ul>
+    </nav>
+
+
+    <main class="content">
+        <h1>Welcome to Our Website</h1>
+        <p>This is the main content area. The navbar has z-index: 2, dropdown has z-index: 3, and this content has z-index: 1.</p>
+        <p>The dropdown will appear above both the navbar and content when activated.</p>
+    </main>
+
+
+
+    <script>
+    
+        // Simple JavaScript to toggle dropdown
+        const servicesLink = document.getElementById('services-link');
+        const servicesDropdown = document.getElementById('services-dropdown');
+
+        servicesLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            servicesDropdown.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-item')) {
+                servicesDropdown.classList.remove('active');
+            }
+        });
+    </script>
+
+</body>
+</html>
+
